@@ -25,7 +25,7 @@ function playCraps(){
     // "||" means or
     // "==" checks if the value are the same 
     if (sum == 7 || sum == 11){
-        document.getElementById("crapResult").innerHTML = "You lose";
+        document.getElementById("crapsResult").innerHTML = "You lose";
 
     }
     // Now lets's check if we win by rolling 2 even numbers that match
@@ -33,12 +33,12 @@ function playCraps(){
     // Then we check the modulus (remainder) is 0 when the die roll is divided by 2
     // Or in other words, was the die roll an even number
     else if(die1 == die2 && die1 % 2 == 0){
-        document.getElementById("crapResult").innerHTML = "You win!";
+        document.getElementById("crapsResult").innerHTML = "You win!";
     }
     // If neither of the previous if or else if statements were true, then this catch-all 
     // Else statement will be executed
     else{
-        document.getElementById("crapResult").innerHTML = "You tied";
+        document.getElementById("crapsResult").innerHTML = "You tied";
     }
 }
 // Create a function that generates a die roll - a random number between 1 and 6
