@@ -12,7 +12,7 @@
 */
 body{
       background-color:rgb(18, 218, 218);
-    color: rgb(18, 218, 218);
+    color:black;
 }
 /* Heading 1. We are going to change the font used for this page title and the text color */
 h1{
@@ -38,13 +38,13 @@ footer{
     These settings will help with a future assignment*/
 #memeImage{
     position: absolute;
-    left: 40%;
+    left: 45%;
     top: 25%;
-    width: 300px;
+    width: 500px;
 }
 /* Change the header to be the center of the page */
 header{
-    text-align: center;
+    text-align:center;
 }
 a{
     text-decoration: none;
