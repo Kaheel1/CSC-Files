@@ -49,3 +49,43 @@ function rollDie(){
     // We get a rounded whole number that will be returned to whatever code calls the function
     return Math.ceil(die);
 }
+
+function validateForm(){
+    // Get the first name that the user entered on the form
+    var firstName = document.getElementById("fname").value
+    // Get the last name that the user entered on the form
+    var lastName = document.getElementById("lname").value
+    // Get the zipcode the user entered on the form
+    var zipCode = document.getElementById("zip").value
+
+    console.log("First Name: " + firstName);
+    console.log("Last Name: " + lastName);
+    console.log("Zip Code: " + zipCode);
+
+    // create a variable to hold firstName + space + lastName
+    var fullName = firstName + " " + lastName;
+    console.log("Full Name: " + fullName);
+    
+    // Do the input validation
+    // Wewill check for more than 20 letters in the first and last names or if no names were entered, the length will be 1 because of the space we add between the first and last name
+    if(fullName.length > 20 || fullName.length == 1){
+        console.log("Invalid name");
+        // Let the user know they did not enter the information correctly
+        alert("Please enter a name that is shorter than 20 characters");
+        // Make sure the form does not sumit
+        return false;
+    }
+    else if(zipCode.length != 5){
+        console.log("Invalid zip code");
+        // Let the user know they did not enter the zip code correctly
+        alert("Zip code was not 5 digits. Please try again.");
+         return false;
+    }
+    else{
+        // The passed validation! Releasethe secret word
+        console.log("We are good to go.");
+        alert("That's mine now! No take backs.");
+        return true;
+    }
+   
+}
