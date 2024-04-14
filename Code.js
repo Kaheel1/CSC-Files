@@ -89,3 +89,36 @@ function validateForm(){
     }
    
 }
+
+// Here is the code for moving the meme image around
+// Track the interval id
+var intervalId = 0;
+// This function will make our image move around
+function startImageMove(){
+    // Create a variable that pionts to ur HTML meme image
+    var meme  = document.getElementById("memeImage");
+    
+    intervalId = setInterval(function(){
+        // Create a variable to hold the new x coordinate
+        var newX = getRandomCoordinate();
+        // Create a variable to hold the new y coordinate
+        var newY = getRandomCoordinate();
+
+        // Lets change the location of our image
+        meme.style.left = newX + "px";
+        meme.style.top = newY + "px";
+        
+        // Output the new info to the console for the debugging purposes
+        console.log("x: " +  meme.style.left + "top: " +  meme.style.top);
+    }, 1000); // The 100 is time in milliseconds - 1000 is 1 second
+            //This code wil move the image every 1 second
+}
+function stopImageMove(){
+    // Call the built in JavaScript function to clear the interval - stop the image from moving
+    clearInterval(intervalId);
+}
+// Create a function to generate our coordinate randomly
+function getRandomCoordinate(){
+    // This function will return random coordinates back to the code that called it
+    return Math.floor(Math.random() * 1000);
+}

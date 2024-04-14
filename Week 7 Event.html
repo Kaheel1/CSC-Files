@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 7 Event Handling Example</title>
+    <link href="Main.CSS" rel="stylesheet">
+</head>
+<body>
+    <h1>Week 7 Event Handling Example</h1>
+    <!-- Explain to the user what the button click will do -->
+    <p>Click the button to generate 5 random numbers and check if the number is even or odd.</p>
+    <!-- Here is the button that will generate numbers when the user clicks the button -->
+    <button onclick="generateNumbers();">Generate Numbers</button>
+    <!-- Show results to the user -->
+    <div id="output"></div>
+
+    <script>
+        // Function to generate random numbers and check if they are even or odd
+        function generateNumbers(){
+            // Create a pointer (nickname) to the HTML div with the id="output"
+            var outputDiv = document.getElementById("output");
+            // Clear out the div each time this functon runs
+            outputDiv.innerHTML = "";
+
+            // Generate 5 random numbers, using a loop
+            // 3 parts to starting up a for loop
+            // 1) set up a counter with an initial value
+            // 2) the condition that needs to be true for the loop to run
+            // 3) change the value of the counter; i++ is the same as i = i + 1
+            for(var i = 0; i < 5; i++){
+                // Lets get a random number
+                var randomNumber = Math.floor(Math.random() * 100);
+                // Set up a variable to hold whether the number is even or odd
+                var result = "";
+                // If the random number is even, there will be no remainder
+                // % is mod / modulus; divide the number by 2, if the remainder is 0, then this if statement will be true
+                if (randomNumber % 2 == 0){
+                    result = "even";
+                }
+                else{
+                    result = "odd";
+                }
+                // Example output will be: Generated Number: 2, Result: even
+                var outputText = "Generated Number: " + randomNumber + ", Result: " + result;
+                // Update the div output text
+                outputDiv.innerHTML =  outputDiv.innerHTML + "<br>" + outputText;
+            }
+        }
+    </script>
+</body>
+</html>

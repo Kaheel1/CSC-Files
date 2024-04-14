@@ -13,6 +13,9 @@
     <title>INTRO TO PROGRAMMING</title>
     <!-- This will link our CSS page to our HTML page; href is the name of the CSS file. rel= stylesheet tells the browser this is our style sheet-->
     <link href="Main.CSS" rel="stylesheet">
+    <!-- Link the JS code -->
+    <script src="Code.js"></script>
+    
 </head>
 
 <!-- Everything we want to show to the user goes in the body section -->
@@ -29,6 +32,11 @@
     <!-- Add header text. There should only one h1 tag on a page -->
     <h1>Welcome to my CSC102 page.</h1>
 
+    <!-- This is the button that will start our image moving around -->
+    <input type="button" onclick="startImageMove();" value="Start Moving Image"> 
+    <!-- This is the button that will stop our image moving around -->
+    <input type="button" onclick="stopImageMove();" value="Stop Moving Image"> 
+
     <!-- This is a paragraph, by default there will be spacing before amd after the p tags. -->
     <p>
         <img id="memeImage" src="Meme.jpeg" alt="Meme Image">
@@ -41,7 +49,6 @@
         2625 W Baseline Rd.<br>
         Tempe, AZ 85283
     </footer>
-
 <!-- Make sure the closing body tag is at the bottom of the page -->
 </body>
 <!-- Closing html tag should be at the bottom of every file -->

@@ -65,7 +65,7 @@
         }
         // We have created the function, now we need to call it so that the function code will run 
         // The () are blank because we don't need to pass any information into this function
-        runCalc();
+        // runCalc();
 
         // The code here does not belong to the function
     </script>
@@ -115,6 +115,91 @@
             //alert("counter=" + counter);
             // Increases the value of counter by 1 every time the while loop runs
             counter++;
+        }
+        // While loops are generally used when you do not know how many times you want the code to run
+    
+    </script>
+
+    <!-- We will build an HTML form so we can gather user input and then validate it.  -->
+    <!-- Method="post" is the best way to handle what happens with the data in the form. It will post the data to the page instead of putting the data in the querystring (URL) -->
+    <form method="post" onsubmit="return validateForm();">
+        <!-- Label should be linked to the input by name of the input -->
+        <label for="fullName">Full Name: </label>
+        <!-- Text box input where we can gather the user's full name -->
+        <input type="text" id="fullName" name="fullName">
+        <br><br> <!-- 2 line breaks for spacing -->
+        <!-- Label for the email -->
+        <label for="theEmail"> Email Address: </label>
+        <!-- Text box input where we can gather the user's email address -->
+        <input type="email" id="theEmail" name="theEmail">
+        <br><br> <!-- 2 line breaks for spacing -->
+        <!-- Label for the age -->
+        <label for="age"> Age: </label>
+        <!-- Test box input where we can gather theuser's age -->
+        <input type="number" id="age" name="age">
+        <br><br> <!-- 2 line breaks for spacing -->
+        <!-- Create a submit button so the form can be validated, etc. -->
+        <input type="submit" value="Save">
+    </form>
+
+    <script>
+        // This function will validate the input that the user entered in our forms
+        function validateForm(){    
+            // Full name the user entered, stored in the variable call fullName
+            var fullName = document.getElementById("fullName").value;
+            // Email the user entered, stored in the variable called email
+            var email = document.getElementById("theEmail").value;
+            // Age the user entered, stored in the variable called age
+            var age = document.getElementById("age").value;
+
+            // Check to make sure the user has entered a name
+            if(fullName.trim() == ""){
+                // Tell user to enter name
+                alert("Please enter your name.");
+                // Don't allow the form to submit to the server
+                return false;
+            }
+            if(email.trim() == ""){
+                // Tell user to enter email
+                alert("Please enter your email.");
+                // Don't allow the form to submit to the server
+                return false;
+            } 
+            if(age.trim() == ""){
+                // Tell user to enter age
+                alert("Please enter your age.");
+                // Don't allow the form to submit to the server
+                return false;
+            } 
+            // Check if age is a number
+            if(isNaN(age)){
+                // 
+                alert("Please enter valid age")
+            }
+
+            // Allow the form to submit to the server
+            return true;
+        } 
+          
+    </script>
+    <!-- Event Driven Programming Section -->
+    <h2>Event Driven Programming</h2>
+    <!-- Button 1 -->
+    <button id="button1"> Click Me!</button>
+    <!-- Button 2 -->
+    <button id="button2"onclick="handleClick2();"> Click Me!</button>
+    <script>
+        // Create a shortcut to refer to the HTML button 9button1)
+        var button1 = document.getElementById("button1");
+        // This is our event handler; it is a function that was set up to run when the button is clicked
+        function handleClick(event){
+            alert("Button Clicked")
+        }
+        // Wire the button to listen for the event (when the button is clicked)
+        button1.addEventListener("click", handleClick);
+        // Function to handle the button 2 click event
+        function handleClick2(event){
+            alert("Button 2 Clicked");
         }
     </script>
 </body>
